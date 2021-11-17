@@ -1,6 +1,7 @@
 package dao;
 
 import domaine.Velo;
+import metier.VLOFactory;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -17,12 +18,7 @@ public class BikeDao {
             List<Velo> aLst = new ArrayList<>();
             String ligne;
             while ((ligne = reader.readLine()) != null) {
-                String[] data = ligne.split(";");
-                String type = data[0];
-                String marque = data[1];
-                String modele = data[2];
-                int prix = Integer.parseInt(data[3]);
-                String rouesOuCadre = data[4];
+                VLOFactory.CreateVelo(ligne);
                /* aLst.add(new Velo(type, marque, modele, prix, rouesOuCadre));*/
             }
             reader.close();
