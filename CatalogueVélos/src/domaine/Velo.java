@@ -14,7 +14,17 @@ public abstract class Velo {
         this.prix = prix;
 
     }
+    private Marge marge;
+    private TauxTva tva;
+
+    public void setMarge(Marge marge) {
+        this.marge = marge;
+    }
+
+    public void setTva(TauxTva tva) {
+        this.tva = tva;
+    }
 
     @Override
-    public String toString() { return marque + " " + modele + " (" + prix ;}}/*+ ".- + " + new Marge() + " + " + new TauxTva() + ") ==> " + (int)((prix+((double)prix*new Marge().getMarge()/100))*(100+new TauxTva().getTaux())/100) + ".-"; }
-}*/
+    public String toString() { return marque + " " + modele + " (" + prix + ".- + " + marge+ " + " +tva+ ") ==> " + (int)((prix+((double)prix*marge.getMarge()/100))*(100+tva.getTaux())/100) + ".-"; }
+}
