@@ -11,7 +11,7 @@ import java.util.List;
 public class BikeDao {
     private static final String FILENAME = "ListeVelos.csv";
 
-    public static List<Velo> listeVelos(String magasin) {
+    public static List<Velo> listeVelos(String magasin) throws IOException {
         try {
             BufferedReader reader  = new BufferedReader(new FileReader(FILENAME));
             List<Velo> aLst = new ArrayList<>();
@@ -23,7 +23,7 @@ public class BikeDao {
                 String modele = data[2];
                 int prix = Integer.parseInt(data[3]);
                 String rouesOuCadre = data[4];
-                aLst.add(new Velo(type, marque, modele, prix, rouesOuCadre));
+               /* aLst.add(new Velo(type, marque, modele, prix, rouesOuCadre));*/
             }
             reader.close();
             return aLst;

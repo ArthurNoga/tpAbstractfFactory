@@ -1,7 +1,7 @@
 package domaine;
 
-public class Marge {
-    private int marge = 15;
+public abstract class Marge {
+    protected int marge = 15;
 
     public int getMarge() { return marge; }
 

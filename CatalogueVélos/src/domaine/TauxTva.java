@@ -1,7 +1,7 @@
 package domaine;
 
-public class TauxTva {
-    private double taux = 7.7;
+public abstract class TauxTva {
+    protected double taux = 7.7;
 
     public double getTaux() { return taux; }
 
